@@ -24,4 +24,5 @@ jobs:
         name: mickey89/vega-api
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        workdir: src/Vega/Vega.Api
+        workdir: src/Vega
+        dockerfile: /Vega.Api/Dockerfile
