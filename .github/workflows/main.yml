@@ -25,4 +25,4 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         workdir: src/Vega
-        context: Vega.Api
+        dockerfile: Vega.Api/Dockerfile
