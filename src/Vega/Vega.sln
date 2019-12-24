@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vega.Api", "Vega.Api\Vega.Api.csproj", "{7B8E4226-BEC3-44BA-84FC-5D98070A8DE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vega.Api", "Vega.Api\Vega.Api.csproj", "{7B8E4226-BEC3-44BA-84FC-5D98070A8DE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{82923D6A-214E-405C-8708-9A53B5DBC2BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vega.Application", "Core\Vega.Application\Vega.Application.csproj", "{2CCEFD93-8D56-4B5C-B3E3-DFE5CA776D8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vega.Domain", "Core\Vega.Domain\Vega.Domain.csproj", "{E2C732E0-C010-442D-AD75-D96F839382F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F4A73C69-65C6-4C89-B70B-BC605703C20D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vega.Infrastructure", "Infrastructure\Vega.Infrastructure\Vega.Infrastructure.csproj", "{164E8F54-72D0-4893-B5D3-E7E7BF0630AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vega.Persistance", "Infrastructure\Vega.Persistance\Vega.Persistance.csproj", "{A1DBBF0B-5079-45BD-B772-FF60443D432B}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C7F1501E-26E9-45F6-BBD6-EEEB04CC4EBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +29,35 @@ Global
 		{7B8E4226-BEC3-44BA-84FC-5D98070A8DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B8E4226-BEC3-44BA-84FC-5D98070A8DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B8E4226-BEC3-44BA-84FC-5D98070A8DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCEFD93-8D56-4B5C-B3E3-DFE5CA776D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCEFD93-8D56-4B5C-B3E3-DFE5CA776D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCEFD93-8D56-4B5C-B3E3-DFE5CA776D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCEFD93-8D56-4B5C-B3E3-DFE5CA776D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C732E0-C010-442D-AD75-D96F839382F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C732E0-C010-442D-AD75-D96F839382F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C732E0-C010-442D-AD75-D96F839382F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C732E0-C010-442D-AD75-D96F839382F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164E8F54-72D0-4893-B5D3-E7E7BF0630AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164E8F54-72D0-4893-B5D3-E7E7BF0630AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164E8F54-72D0-4893-B5D3-E7E7BF0630AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164E8F54-72D0-4893-B5D3-E7E7BF0630AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1DBBF0B-5079-45BD-B772-FF60443D432B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DBBF0B-5079-45BD-B772-FF60443D432B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1DBBF0B-5079-45BD-B772-FF60443D432B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1DBBF0B-5079-45BD-B772-FF60443D432B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7F1501E-26E9-45F6-BBD6-EEEB04CC4EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7F1501E-26E9-45F6-BBD6-EEEB04CC4EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7F1501E-26E9-45F6-BBD6-EEEB04CC4EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F1501E-26E9-45F6-BBD6-EEEB04CC4EBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2CCEFD93-8D56-4B5C-B3E3-DFE5CA776D8E} = {82923D6A-214E-405C-8708-9A53B5DBC2BC}
+		{E2C732E0-C010-442D-AD75-D96F839382F4} = {82923D6A-214E-405C-8708-9A53B5DBC2BC}
+		{164E8F54-72D0-4893-B5D3-E7E7BF0630AA} = {F4A73C69-65C6-4C89-B70B-BC605703C20D}
+		{A1DBBF0B-5079-45BD-B772-FF60443D432B} = {F4A73C69-65C6-4C89-B70B-BC605703C20D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {031ECE3C-C404-4E3D-ADFF-5C06072A627E}

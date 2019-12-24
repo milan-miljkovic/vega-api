@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Vega.Application;
+using Vega.Persistance;
 
 namespace Vega.Api
 {
@@ -25,6 +28,8 @@ namespace Vega.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddPersistance(Configuration);
+            services.AddApplication();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +48,18 @@ namespace Vega.Api
             {
                 endpoints.MapControllers();
             });
+
+           ApplyMigrations(app);
+        }
+
+        private void ApplyMigrations(IApplicationBuilder app)
+        {
+            using var scope = app.ApplicationServices.CreateScope();
+            var context = scope.ServiceProvider.GetService<VegaDbContext>();
+            if (context.Database.GetPendingMigrations().Any())
+            {
+                context.Database.Migrate();
+            }
         }
     }
 }
