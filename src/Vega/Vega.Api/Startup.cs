@@ -30,6 +30,15 @@ namespace Vega.Api
             services.AddControllers();
             services.AddPersistance(Configuration);
             services.AddApplication();
+            services.AddSwaggerDocument(config => {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "Vega API";
+                    document.Info.Description = "Vega API";
+                    document.Info.TermsOfService = "None";
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +58,10 @@ namespace Vega.Api
                 endpoints.MapControllers();
             });
 
-           ApplyMigrations(app);
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
+            ApplyMigrations(app);
         }
 
         private void ApplyMigrations(IApplicationBuilder app)
