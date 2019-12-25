@@ -1,5 +1,5 @@
-name: Publish Docker
-on: [push]
+name: PublishDocker
+on: [pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
