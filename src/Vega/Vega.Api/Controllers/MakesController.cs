@@ -38,10 +38,10 @@ namespace Vega.Api.Controllers
         }
 
         /// <summary>
-        /// Retrieves list of makes
+        /// Retrieves make by ID
         /// </summary>
-        /// <returns>All makes</returns>
-        /// <response code="200">Returned list of makes</response>
+        /// <returns>Make</returns>
+        /// <response code="200">Returned make based on ID</response>
         /// <response code="500">Returned in case of internal server error</response>
         [HttpGet("{id}")]
         [Produces("application/json")]

@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Vega.Api.Middlewares;
 using Vega.Application;
 using Vega.Application.Common.Exceptions;
 using Vega.Persistance;
@@ -53,6 +54,8 @@ namespace Vega.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCustomExceptionHandler();
 
             app.UseRouting();
 

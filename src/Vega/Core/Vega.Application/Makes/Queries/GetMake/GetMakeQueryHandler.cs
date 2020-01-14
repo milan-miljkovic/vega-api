@@ -26,7 +26,7 @@ namespace Vega.Application.Makes.Queries.GetMake
         public async Task<MakeDTO> Handle(GetMakeQuery request, CancellationToken cancellationToken)
         {
             var make = await _context.Makes.Include(m => m.Models)
-                .FirstOrDefaultAsync(m => m.Id == request.Id)
+                .FirstOrDefaultAsync(m => m.Id == request.Id, cancellationToken)
                 .ConfigureAwait(false);
 
             if (make == null)

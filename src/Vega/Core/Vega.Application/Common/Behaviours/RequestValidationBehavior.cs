@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ValidationException = Vega.Application.Common.Exceptions.ValidationException;
 
 namespace Vega.Application.Common.Behaviours
 {

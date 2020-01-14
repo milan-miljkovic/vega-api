@@ -19,7 +19,7 @@ namespace Vega.Application.Makes.Commands.CreateMake
 
                     if (exist)
                     {
-                        context.AddFailure($"Make with name {name} already exist");
+                        context.AddFailure($"Make with name '{name}' already exist");
                     }
                 });
         }
