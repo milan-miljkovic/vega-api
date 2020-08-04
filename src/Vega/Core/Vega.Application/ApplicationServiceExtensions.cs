@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Vega.Application.Common.Behaviours;
 
 namespace Vega.Application
 {
@@ -11,6 +12,7 @@ namespace Vega.Application
         {
             services.AddAutoMapper(typeof(ApplicationServiceExtensions).Assembly);
             services.AddMediatR(typeof(ApplicationServiceExtensions).Assembly);
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
         }
     }
 }

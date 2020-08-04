@@ -22,4 +22,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
-ENTRYPOINT ["dotnet", "Vega.Api.dll"]
+ENTRYPOINT ["dotnet", "watch", "Vega.Api.dll"]

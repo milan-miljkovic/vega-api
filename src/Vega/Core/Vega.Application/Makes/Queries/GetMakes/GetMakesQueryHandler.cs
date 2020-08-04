@@ -25,7 +25,7 @@ namespace Vega.Application.Makes.Queries.GetMakes
 
         public async Task<MakesListDTO> Handle(GetMakesQuery request, CancellationToken cancellationToken)
         {
-            var makes = await _context.Makes.ProjectTo<MakeDTO>(_mapper.ConfigurationProvider)
+            var makes = await _context.Makes.Include(m => m.Models).ProjectTo<MakeDTO>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken).ConfigureAwait(false);
 
             return new MakesListDTO(makes);

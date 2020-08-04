@@ -10,7 +10,8 @@ namespace Vega.Persistance.Configurations
     {
         public override void ConfigureEntity(EntityTypeBuilder<Feature> builder)
         {
-            builder.Property(f => f.Name).HasMaxLength(255);
+            builder.HasIndex(m => m.Name).IsUnique(true);
+            builder.Property(f => f.Name).HasMaxLength(255).IsRequired();
         }
     }
 }

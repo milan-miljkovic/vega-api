@@ -8,5 +8,6 @@ namespace Vega.Application.Common.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public List<ModelDTO> Models { get; set; }
     }
 }
